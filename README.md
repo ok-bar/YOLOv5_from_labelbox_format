@@ -48,3 +48,9 @@ import torch
 model = torch.hub.load('ultralytics/yolov5', 'custom', '//content/yolov5/runs/train/no_tr_more_data_high_aug_26/weights/best.pt',force_reload=True)
 results=model('/content/image_15.jpeg')
 results.save()
+
+
+if YOLO8:
+!pip install ultralytics  
+
+!yolo task=detect mode=train model=yolov8s.pt data='/content/yolov5/data/coco.yaml' epochs=3 imgsz=640
