@@ -47,6 +47,15 @@ random.seed(42)
 
 
 
+import random
+import shutil
+import os
+
+
+random.seed(42)
+
+
+
 def train_test_val_split(source_imgs,source_labels,root_path,tr_dst,tst_dst,val_dst,tr_size,tst_size):
   source_img=source_imgs
   source_label = source_labels
@@ -116,6 +125,8 @@ def train_test_val_split(source_imgs,source_labels,root_path,tr_dst,tst_dst,val_
   print('the number of image in the validation: ',len(os.listdir(x_val_dir)))
 
   return x_train_dir,y_train_dir,x_test_dir,y_test_dir,x_val_dir,y_val_dir
+
+x_train_dir,y_train_dir,x_test_dir,y_test_dir,x_val_dir,y_val_dir=train_test_val_split(source_imgs,source_labels,root_path,tr_dst,tst_dst,val_dst,tr_size,tst_size)
 
 
 
