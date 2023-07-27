@@ -13,7 +13,9 @@ One important step is adding 0-10% background images to increase the performance
 Before training the model you should clone the yolov5 model:
 
 !git clone https://github.com/ultralytics/yolov5.git
+
 %cd yolov5
+
 !pip install -r requirements.txt
 
 Training the model is very straight forward using yolov5, here I used hyp.scratch-low which contains augmentations and freezed all layers for better fine tuning.
@@ -28,6 +30,8 @@ Next validation of the model is required:
 
 <img width="1069" alt="image" src="https://user-images.githubusercontent.com/51881832/180164018-0427e144-5c78-437f-b902-b6546f12dfb5.png">
 
+
+!python detect.py --weights /content/yolov5/runs/train/exp3/weights/last.pt  --source /content/drive/MyDrive/windows_boarded_1/test/images --img 640 --save-txt --save-conf 
 ![image](https://user-images.githubusercontent.com/51881832/180164302-34640b82-1cfa-4dce-a5a4-e00d54165275.png)
 
 The results are pretty good using the fact that the model was trained on 120~ images. 
