@@ -31,9 +31,18 @@ Next validation of the model is required:
 <img width="1069" alt="image" src="https://user-images.githubusercontent.com/51881832/180164018-0427e144-5c78-437f-b902-b6546f12dfb5.png">
 
 
-!python detect.py --weights /content/yolov5/runs/train/exp3/weights/last.pt  --source /content/drive/MyDrive/windows_boarded_1/test/images --img 640 --save-txt --save-conf 
+
 ![image](https://user-images.githubusercontent.com/51881832/180164302-34640b82-1cfa-4dce-a5a4-e00d54165275.png)
 
 The results are pretty good using the fact that the model was trained on 120~ images. 
 
 ![image](https://user-images.githubusercontent.com/51881832/180164634-19b89e06-2e12-4db5-b025-50f6344448da.png)
+
+
+
+!python detect.py --weights /content/yolov5/runs/train/exp3/weights/last.pt  --source /content/drive/MyDrive/windows_boarded_1/test/images --img 640 --save-txt --save-conf 
+
+
+import torch
+
+model = torch.hub.load('ultralytics/yolov5', 'custom', '//content/yolov5/runs/train/no_tr_more_data_high_aug_26/weights/best.pt',force_reload=True)
