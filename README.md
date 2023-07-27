@@ -46,3 +46,5 @@ The results are pretty good using the fact that the model was trained on 120~ im
 import torch
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', '//content/yolov5/runs/train/no_tr_more_data_high_aug_26/weights/best.pt',force_reload=True)
+results=model('/content/image_15.jpeg')
+results.save()
