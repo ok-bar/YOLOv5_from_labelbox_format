@@ -1,9 +1,8 @@
 import pandas as pd
 import json
-
-def loading(file):
-  with open(file) as f:
-    data = json.load(f)
-  return pd.DataFrame(data)
- 
-data=loading(file)
+from tqdm import tqdm
+with open(file) as f:
+        data = json.load(f)
+data=pd.DataFrame(data)
+data = data[data['Skipped']==False]
+data= data.reset_index(drop=True)
